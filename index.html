@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de clase</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <form>
+                <h1 class="title">Operaciones con números enteros</h1>
+                <h3 class="subtitulo">Ingrese la constante</h3>
+                <input class="input" type="text" pattern="[a-e]*" id="constante" name="constante" placeholder="Constante (Ingrese los digitos en el rango de la a-e)" 
+                minlength="1" maxlength="1" required >
+                <br><br>
+                <h3 class="subtitulo">Ingrese el exponente</h3>
+                <input class="input" type="text" id="exponente" name="exponente" placeholder="Ingrese el exponente (entero)" 
+                pattern="^[0-9]+$" min="1" max="9999" required>
+                <br><br>
+                <h3 class="subtitulo">Ingrese la variable</h3>
+                <input class="input" type="text" id="variable" name="variable" placeholder="Variable" required>
+                <br><br>
+                <button type="submit" class="button" name="calcular">Calcular</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sub-container">
+            <form>
+                <h1 class="title">Resultado y Gráfica</h1>
+                <h3 class="subtitulo">Resultado del cálculo de la derivada</h3>
+            <p id="result" class="result">Aquí aparecerá el resultado...</p>
+            <h3 class="subtitulo">Gráfica generada</h3>
+            <button class="button" onclick="generateGraph()">Generar Gráfica</button>
+            <canvas id="myChart" width="400" height="400"></canvas>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function generateGraph() {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                        label: 'Ejemplo de Datos',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        data: [0, 10, 5, 2, 20, 30, 45]
+                    }]
+                },
+                options: {}
+            });
+        }
+    </script>
+</body>
+</html>
